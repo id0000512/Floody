@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		BA69FC6122B679E400EB12CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA69FC6022B679E400EB12CD /* AppDelegate.swift */; };
-		BA69FC6322B679E400EB12CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA69FC6222B679E400EB12CD /* ViewController.swift */; };
 		BA69FC6622B679E400EB12CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA69FC6422B679E400EB12CD /* Main.storyboard */; };
 		BA69FC6822B679E600EB12CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA69FC6722B679E600EB12CD /* Assets.xcassets */; };
 		BA69FC6B22B679E600EB12CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA69FC6922B679E600EB12CD /* LaunchScreen.storyboard */; };
+		BA93C5BD22B696740008F2FE /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA93C5BC22B696740008F2FE /* Main.swift */; };
+		BA93C5C122B697B40008F2FE /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA93C5C022B697B40008F2FE /* CustomCell.swift */; };
+		BA93C5C322B69A660008F2FE /* FloodClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA93C5C222B69A660008F2FE /* FloodClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BA69FC5D22B679E400EB12CD /* Floody.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Floody.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA69FC6022B679E400EB12CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BA69FC6222B679E400EB12CD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BA69FC6522B679E400EB12CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BA69FC6722B679E600EB12CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA69FC6A22B679E600EB12CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA69FC6C22B679E600EB12CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA93C5BC22B696740008F2FE /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
+		BA93C5C022B697B40008F2FE /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		BA93C5C222B69A660008F2FE /* FloodClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloodClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,8 +59,10 @@
 			isa = PBXGroup;
 			children = (
 				BA69FC6022B679E400EB12CD /* AppDelegate.swift */,
-				BA69FC6222B679E400EB12CD /* ViewController.swift */,
 				BA69FC6422B679E400EB12CD /* Main.storyboard */,
+				BA93C5BC22B696740008F2FE /* Main.swift */,
+				BA93C5C022B697B40008F2FE /* CustomCell.swift */,
+				BA93C5C222B69A660008F2FE /* FloodClass.swift */,
 				BA69FC6722B679E600EB12CD /* Assets.xcassets */,
 				BA69FC6922B679E600EB12CD /* LaunchScreen.storyboard */,
 				BA69FC6C22B679E600EB12CD /* Info.plist */,
@@ -135,7 +141,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA69FC6322B679E400EB12CD /* ViewController.swift in Sources */,
+				BA93C5BD22B696740008F2FE /* Main.swift in Sources */,
+				BA93C5C322B69A660008F2FE /* FloodClass.swift in Sources */,
+				BA93C5C122B697B40008F2FE /* CustomCell.swift in Sources */,
 				BA69FC6122B679E400EB12CD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,6 +290,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3Y3H58KDA5;
 				INFOPLIST_FILE = Floody/Info.plist;
@@ -291,6 +300,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = id0000512.Floody;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -300,6 +310,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3Y3H58KDA5;
 				INFOPLIST_FILE = Floody/Info.plist;
@@ -309,6 +320,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = id0000512.Floody;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
