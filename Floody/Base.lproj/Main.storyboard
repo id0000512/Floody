@@ -5,11 +5,11 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.70"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Флудостахановцы-->
         <scene sceneID="nil-6l-UlT">
             <objects>
                 <tableViewController id="Wug-0p-bpr" customClass="Main" customModule="Floody" customModuleProvider="target" sceneMemberID="viewController">
@@ -32,14 +32,27 @@
                                                 <constraint firstAttribute="height" constant="65" id="RNY-4u-FaT"/>
                                             </constraints>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OSt-m5-ND6">
+                                            <rect key="frame" x="94" y="10" width="300" height="26"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="26" id="mVe-si-GwG"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="OSt-m5-ND6" firstAttribute="leading" secondItem="PSJ-R6-Y5d" secondAttribute="trailing" constant="14" id="2qf-WT-8OQ"/>
                                         <constraint firstItem="PSJ-R6-Y5d" firstAttribute="leading" secondItem="muE-oE-j3X" secondAttribute="leading" constant="15" id="D68-X7-ocQ"/>
                                         <constraint firstItem="PSJ-R6-Y5d" firstAttribute="centerY" secondItem="muE-oE-j3X" secondAttribute="centerY" id="YDH-Nf-Miu"/>
+                                        <constraint firstItem="OSt-m5-ND6" firstAttribute="top" secondItem="muE-oE-j3X" secondAttribute="top" constant="10" id="ci4-bt-SD4"/>
+                                        <constraint firstAttribute="trailing" secondItem="OSt-m5-ND6" secondAttribute="trailing" constant="20" id="mRJ-3s-cLM"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="avatar" destination="PSJ-R6-Y5d" id="y8k-Sw-K6S"/>
+                                    <outlet property="nameLabel" destination="OSt-m5-ND6" id="Ipp-SQ-Me9"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -48,11 +61,11 @@
                             <outlet property="delegate" destination="Wug-0p-bpr" id="HEw-Ij-JXu"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="za7-6k-xku"/>
+                    <navigationItem key="navigationItem" title="Флудостахановцы" id="za7-6k-xku"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fbc-00-qfN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="520" y="3"/>
+            <point key="canvasLocation" x="395.6521739130435" y="2.6785714285714284"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hi7-YM-6bh">
@@ -61,6 +74,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bRG-wm-2Fj">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="30"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="Wug-0p-bpr" kind="relationship" relationship="rootViewController" id="nyP-Bg-2p1"/>
