@@ -10,15 +10,26 @@ import UIKit
 
 class NewFlood: UITableViewController {
     
+    var newFlood: Flood?
+    
     let cameraIcon = #imageLiteral(resourceName: "camera")
     let photoIcon = #imageLiteral(resourceName: "picture")
 
-    @IBOutlet weak var imageOfPlace: UIImageView!
+    @IBOutlet var saveButton: UIBarButtonItem!
+
+    @IBOutlet weak var floodImage: UIImageView!
+    @IBOutlet var floodName: UITextField!
+    @IBOutlet var floodAge: UITextField!
+    @IBOutlet var floodWork: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.tableFooterView = UIView()
+        
+        saveButton.isEnabled = false
+        
+        floodName.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -47,7 +58,19 @@ class NewFlood: UITableViewController {
             view.endEditing(true)
         }
     }
-
+    func saveNewFlood() {
+        newFlood = Flood(name: floodName.text!,
+                         age: Int(floodAge.text!),
+                         work: floodWork.text,
+                         image: floodImage.image,
+                         floodImage: nil)
+        
+    }
+    
+    @IBAction func cancelAction(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 
 }
 
@@ -57,6 +80,15 @@ extension NewFlood: UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+    
+    @objc private func textFieldChanged() {
+        if floodName.text?.isEmpty == false {
+            saveButton.isEnabled = true
+        } else {
+            saveButton.isEnabled = false
+        }
+    }
+
 }
 
 extension NewFlood: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -71,9 +103,9 @@ extension NewFlood: UIImagePickerControllerDelegate, UINavigationControllerDeleg
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        imageOfPlace.image = info[.editedImage] as? UIImage
-        imageOfPlace.contentMode = .scaleAspectFill
-        imageOfPlace.clipsToBounds = true
+        floodImage.image = info[.editedImage] as? UIImage
+        floodImage.contentMode = .scaleAspectFill
+        floodImage.clipsToBounds = true
         dismiss(animated: true, completion: nil)
     }
 

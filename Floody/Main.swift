@@ -10,7 +10,7 @@ import UIKit
 
 class Main: UITableViewController {
     
-    let nameAndAvatars = Flood.getFriend()
+    var nameAndAvatars = Flood.getFriend()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,11 +27,21 @@ class Main: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomCell
 
-        cell.avatar.image = UIImage(named: nameAndAvatars[indexPath.row].name)
+        let flood = nameAndAvatars[indexPath.row]
+        
+        if flood.image == nil {
+            cell.avatar.image = UIImage(named: flood.floodImage!)
+        } else {
+            cell.avatar.image = flood.image
+        }
+        
+        
         cell.avatar.layer.cornerRadius = 15
         cell.avatar.clipsToBounds = true
         
-        cell.nameLabel.text = nameAndAvatars[indexPath.row].name
+        cell.nameLabel.text = flood.name
+        cell.ageLabel.text = String(flood.age!)
+        cell.workLabel.text = flood.work
         
         
         return cell
@@ -86,7 +96,12 @@ class Main: UITableViewController {
     }
     */
     
-    @IBAction func cancelAction(_ segue: UIStoryboardSegue) {}
+    @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
+        guard let newFloodVC = segue.source as? NewFlood else { return }
+        newFloodVC.saveNewFlood()
+        nameAndAvatars.append(newFloodVC.newFlood!)
+        tableView.reloadData()
+    }
     
 
 }

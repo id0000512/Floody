@@ -66,8 +66,10 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="ageLabel" destination="6HE-OR-ZQd" id="xvb-3h-KHh"/>
                                     <outlet property="avatar" destination="PSJ-R6-Y5d" id="y8k-Sw-K6S"/>
                                     <outlet property="nameLabel" destination="OSt-m5-ND6" id="Ipp-SQ-Me9"/>
+                                    <outlet property="workLabel" destination="tSR-d0-qQs" id="tSf-H4-poB"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -238,13 +240,21 @@
                     <navigationItem key="navigationItem" id="oLx-aS-2BV">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="SZ5-3a-8HE">
                             <connections>
-                                <segue destination="kt0-Gg-Kbg" kind="unwind" unwindAction="cancelAction:" id="j4M-5g-hx9"/>
+                                <action selector="cancelAction:" destination="bIx-sp-Zzq" id="YfX-O4-ZS3"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="TAv-Fn-d10"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="TAv-Fn-d10">
+                            <connections>
+                                <segue destination="kt0-Gg-Kbg" kind="unwind" unwindAction="unwindSegue:" id="FOZ-VJ-W3a"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="imageOfPlace" destination="l0s-Mt-8Dg" id="Xfr-1x-cWd"/>
+                        <outlet property="floodAge" destination="Njj-ZP-rAc" id="gxg-Ti-JTE"/>
+                        <outlet property="floodImage" destination="l0s-Mt-8Dg" id="Xfr-1x-cWd"/>
+                        <outlet property="floodName" destination="cvN-LI-3hk" id="JHS-Np-jxd"/>
+                        <outlet property="floodWork" destination="t8V-lA-pcX" id="seh-VN-3Hd"/>
+                        <outlet property="saveButton" destination="TAv-Fn-d10" id="ewb-de-pbA"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HTB-Ed-0sf" userLabel="First Responder" sceneMemberID="firstResponder"/>
